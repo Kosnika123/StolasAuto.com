@@ -57,7 +57,7 @@ top: 9px;
     width: 25px;
     height: 3px;
     margin-bottom: 5px;
-    background-color: #fff;
+    background-color: #000;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -69,9 +69,26 @@ top: 9px;
     transition: 0.3s ease-in-out;
 }
 
+.nav-links a{
+    text-decoration: none;
+    padding: 5px;
+}
+
 .nav-links a:hover{
    color: goldenrod; 
    transform: scale3d();
+}
+
+#SignUp{
+    background-color: #183cdb; 
+    color: #fff;  
+    padding: 5px;
+    border-radius: 12px;
+    transition: 0.4s ease-in-out;
+   }
+
+#SignUp:hover{
+  background-color: blue;  
 }
 
 .nav-links a{
@@ -80,6 +97,13 @@ top: 9px;
     text-align: none;
     color: black;
     font-weight: 600;
+}
+
+.close-sidebar{
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    display: none;
 }
 
 .car-links{
@@ -127,6 +151,32 @@ display: flex;
 .product-logos{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+animation: slideInLeft 4s ease-in;
+}
+
+@keyframes slideInLeft{
+  0%{
+    transform: translateX(-200);
+    opacity: 0;
+  }  
+  50%{
+   transform: translateX(-50%); 
+   opacity: 0.5;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+0%{
+    transform: translateX(100%);
+}
+
+100%{
+    transform: translateX(0);
+}
 }
 
 .card{
@@ -146,24 +196,32 @@ border: 1px solid grey;
  object-fit: cover;
 }
 
+
 .popular-container{
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
     width: 100%;
 }
 
 .popular-card{
- display: flex;
     text-align: center;
     padding: 7px;
-    height: 100px;
+    height: 300px;
+    max-width: 200px;
     width: 20%;
     border-radius: 10px;
     border: 1px solid grey;
+    animation: slide-in 4s ease-in;
+}
+
+.popular-card a {
+text-decoration: none;
+color: #000;
 }
 
  .popular-card img{
-    width: 48%;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -171,11 +229,13 @@ border: 1px solid grey;
     padding: 10px;
 }
 
-
 .Featured-container{
-    width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.Fcard, .cardText{
+    overflow: visible !important;
 }
 
 .Fcard{
@@ -185,6 +245,7 @@ border: 1px solid grey;
    border: 1px solid grey;
    border: 200px;
    border: 1px solid #333;
+    border-radius: 24px;
 }
 
 .Fcard img {
@@ -238,38 +299,77 @@ footer{
 
    .nav-links{
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 220px;
+    background-color: #ffffff;
+    color: #000000;
     padding: 1em;
+    flex-direction: column;
+    align-items: flex-start;
     z-index: 1000;
+    text-decoration: none;
    }
 
    .nav-links.show{
     display: flex;
    }
 
-   .textOnImg img {
-width: 100vw;
+       .nav-button{
+    display: block;
+    text-decoration: none;
    }
 
+        
+   .close-sidebar{
+    display: block;
+    color: #000;
+    text-align: right;
+}
+
+   .textOnImg img {
+width: 100vw;
+height: 670px;
+   }
+
+   .Text{
+    top: 0px;
+   }
+    
 .card img{
    border: none;
    width: 50%; 
 }
 
 .popular-container{
-    flex-direction: column;
+       display: flex;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   gap: 20px;
+   padding-bottom: 20px;
+   scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
 }
 
 .popular-card{
-    width: 100%;
+   min-width: 240px;
+   flex: 0 0 auto;
+   scroll-snap-align: center;
+   background: white;
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   font-size: 1.2rem;
+   transition: transform 0.3s ease-in;
 }
 
+.card:active{
+    transform: scale(0.9s);
+}
+    
 /* Continuation */
 .Featured-container{
     flex-direction: column;
