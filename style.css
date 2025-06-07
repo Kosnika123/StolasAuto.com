@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Times New Roman', Times, serif;
 }
 
 header{
@@ -40,7 +40,9 @@ top: 9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:#fff;
+    padding: 1em;
+    background-color: #fff;
+    color:#333;
 }
 
 .nav-button{
@@ -74,11 +76,6 @@ top: 9px;
     padding: 5px;
 }
 
-.nav-links a:hover{
-   color: goldenrod; 
-   transform: scale3d();
-}
-
 #SignUp{
     background-color: #183cdb; 
     color: #fff;  
@@ -89,6 +86,11 @@ top: 9px;
 
 #SignUp:hover{
   background-color: blue;  
+}
+
+.nav-links a:hover{
+   color: goldenrod; 
+   transform: scale3d();
 }
 
 .nav-links a{
@@ -119,39 +121,44 @@ display: flex;
     padding: 12px;
     color: rgb(78, 78, 78);
     text-align: center;
+  
 }
+
+
+   
 
 /* Text On Image */
 .textOnImg{
    width: 100%;
-   height: 670px;
+   height: 520px;
 }
 
 .textOnImg img{
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
-    filter: brightness(50%);
-    position: relative;
+    filter: brightness(40%);
+    position: absolute;
 }
+
+
 
 .textOnImg .Text {
    font-size: 24px; 
-   font-family: cursive;
    color: white;
-   position: absolute;
-   bottom:14px;
+   position: relative;
+   top: 37%;
 }
 
 .textOnImg .Text #span{
-    font-size: 8px;
+    font-size: 18px;
     font-style: normal;
 }
 
 .product-logos{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-animation: slideInLeft 4s ease-in;
+    animation: slideInLeft 4s ease-in;
 }
 
 @keyframes slideInLeft{
@@ -196,11 +203,11 @@ border: 1px solid grey;
  object-fit: cover;
 }
 
-
 .popular-container{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 94%;
+    padding: 30px;
 }
 
 .popular-card{
@@ -229,38 +236,84 @@ color: #000;
     padding: 10px;
 }
 
-.Featured-container{
+
+  
+
+/* 
+Continuation */
+
+section{
+  height: 550px;  
+  position: relative;
+}
+
+.CartImg{
+    height: 90%;
+}
+
+.CartImg img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: brightness(50%);
+}
+
+.CartText{
+    position: absolute;
+    top: 29%;
+    color: white;
+    margin: 30px;
+}
+
+.CartText h1{
+    font-size: 34px;
+}
+
+.CartText p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.CartText  button{
+ margin-top: 48px;   
+padding: 10px;
+}
+
+main{
+    background-color: #bfbfbf;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    padding: 2%;
+    max-width: 100%;
 }
 
-.Fcard, .cardText{
-    overflow: visible !important;
+.Main-text{
+  margin-left: 30px;  
+  padding: 20px;
 }
 
-.Fcard{
-    text-align: center;
-    padding: 7px;
-    /* height: 100px;  */
-   border: 1px solid grey;
-   border: 200px;
-   border: 1px solid #333;
-    border-radius: 24px;
-}
-
-.Fcard img {
-    width: 300px;
-    object-fit: contain;   
-}
-
-.cardText{
-    display: flex;
-    justify-content: space-between;
-}
-
-.cardText p span{
+.podbutton{
+    padding: 10px;
+    width: 200px;
+    font-weight: 700;
+    color: white;
+    background-color: #000;
+    border: none;
     font-size: 12px;
 }
+
+.CEO{
+    width: 170px;
+    text-align: center;
+    border: 1px solid #9f9f9f;
+}
+
+.CEO img{
+  height: 100px;  
+  border-radius: 100%;
+  width: 90px;
+  object-fit: cover;
+}
+
 button{
     cursor: pointer;
 }
@@ -292,6 +345,87 @@ footer{
     text-decoration: none;
 }
 
+
+footer{
+  display: flex;  
+justify-content: space-between;
+background-color: #070707;
+font-family: 'Times New Roman', Times, serif;
+padding: 24px;
+}
+
+
+.KLinks ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.KLinks ul li{
+    padding: 10px;
+    list-style: none;
+}
+
+
+
+footer .Kcartegories ul {
+    list-style: none;  
+  }
+  
+
+footer .Kcartegories ul li a{
+color: #fff;
+text-decoration: none;
+}
+
+.Kcartegories ul li{
+    padding: 10px;
+}
+
+footer .Kcatalog ul{
+    list-style: none;
+    }
+    
+
+footer .Kcatalog ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.Kcatalog ul li{
+    padding: 10px;
+}
+
+
+footer .KBuisness ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.KBuisness ul li{
+    padding: 10px;
+    list-style: none;
+}
+
+.social-link{
+    border-top: 2px solid #333;
+    display: flex;
+    background-color: #070707;
+    justify-content: space-between;
+    color: #555555;
+    padding: 12px;
+}
+
+.Links{
+    display: flex;
+}
+
+.Links a i{
+    cursor: pointer;
+    color: white;
+    margin-right: 4%;
+    padding: 10px;
+}
+
+
 @media (max-width: 768px) {
    .nav-button{
     display: block;
@@ -313,11 +447,12 @@ footer{
     text-decoration: none;
    }
 
+
    .nav-links.show{
     display: flex;
    }
 
-       .nav-button{
+   .nav-button{
     display: block;
     text-decoration: none;
    }
@@ -331,20 +466,24 @@ footer{
 
    .textOnImg img {
 width: 100vw;
-height: 670px;
+height: 540px;
    }
 
    .Text{
     top: 0px;
    }
-    
+
 .card img{
    border: none;
    width: 50%; 
 }
 
+.Fcard{
+    border: none;
+}
+
 .popular-container{
-       display: flex;
+   display: flex;
    overflow-x: auto;
    scroll-snap-type: x mandatory;
    gap: 20px;
@@ -369,7 +508,9 @@ height: 670px;
 .card:active{
     transform: scale(0.9s);
 }
-    
+
+
+
 /* Continuation */
 .Featured-container{
     flex-direction: column;
@@ -378,15 +519,76 @@ height: 670px;
 .Shift-head{
     text-align: left;
 }
-    
+
+
+.Kcatalog{
+    display: none;
 }
 
 
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+main{
+    flex-direction: column;
+    position: relative;
+   margin: 20px;
+}
+
+.CEO{
+    margin-bottom: 60px;
+margin-left: 19%;
+}
+
+.CEO img{
+    width: 140px;
+    height: 120px;
+}
+
+
+.podbutton{
+    position: absolute;
+    top: 90%;
+}
+
+}
 
 @media (max-width: 1837px) {
     .Text{
         position: relative;  
         top: 70%;
          } 
+
+
+    
 }
 
+/* Particle animation */
+
+#heart-btn {
+   position: relative; 
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+#heart-icon {
+    font-size: 18px;
+    margin-right: 4px;
+    
+}
+
+.red {
+    color: red;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    z-index: 1000;
+    opacity: 1;
+    color: red;
+}
