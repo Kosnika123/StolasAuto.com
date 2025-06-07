@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> K.Edition/SignUpSheet </title>
+    <!-- Author Kosnika -->
+</head>
+<body>
+    <!-- For This page CSS and Javascript styled internally. -->
+   
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+body, html{
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+  color: #000;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.close-sidebar{
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    display: none;
+}
+
+.nav-toggle{
+display: none;
+cursor: pointer;
+}
+
+.nav-toggle span{
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 7px;
+}
+
+ul li {
+    display: flex;
+    list-style: none;
+    display: none;
+}
+
+ul a{
+    padding: 10px;
+text-decoration: none;
+font-weight: 700;
+color: rgb(255, 255, 255);
+}
+
+
+ul a:hover{
+   transition: 0.3s ease-in; 
+   text-decoration: underline;
+}
+
+
+#SignUp{
+    background-color: #183cdb; 
+    color: #fff;   
+    border-radius: 12px;
+    transition: 0.4s ease-in-out;
+   }
+
+#SignUp:hover{
+  background-color: blue;  
+}
+
+
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+.Form-container{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.form-box{
+    background-color: rgb(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="Password"]{
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-box button{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: grey;
+    color: white;
+}
+
+.form-box button:hover{
+    background-color: black;
+    transform: scale(1.05);
+    transition: .5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+
+    .nav-links{
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 210px;
+        background-color: #ffffff;
+        padding: 1em;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    .nav-links a{
+        color: #000;
+    }
+    
+    .nav-links.show{
+        display: flex;
+    }
+    
+    .nav-toggle{
+        display: block;
+        color: #000;
+    }
+    
+    .close-sidebar{
+        display: block;
+        color: rgb(0, 0, 0);
+    }
+}    
+
+    </style>
+
+ <header>
+<h2 style="color: #fff;"> K.Edition </h2>
+
+ <nav class="nav">
+    <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+ </nav>
+
+ <ul class="nav-links">
+    <li class="close-sidebar" style="color: #000; font-weight:800"> &times;</li>
+    <a href="index.html">Home</a>
+    <a href="About.html">About_Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="SignUp.html" id="SignUp">SignUp</a>
+ </ul>
+ </header>   
+
+    <div class="video-container">
+        <video width="200" autoplay muted loop > 
+            <source src="/video/Car Back (2).mp4">
+        </video>
+    </div> 
+    
+    <div class="Form-container"> 
+
+        <div class="form-box">
+            <h2 style="color: #fff;"> K.Edition Sign Up</h2>
+       <form action="#" id="Form" onsubmit="Submit(event)">
+       <input type="text" placeholder="First Name" required>
+       <input type="text" placeholder="Last Name" required>
+       <input type="email" placeholder="Email" required>
+       <input type="password" placeholder="Password" required>
+       <button type="submit" onclick="event"> Submit</button>
+    </form>
+    <p style="color: #fff;"> Don't have an account ? </p> <br>
+    <a href="#" style="color: #fff; text-decoration:none">SignUp</a>
+       </div>
+    </div>
+    
+    <script> 
+    
+        function Submit
+        (event){
+            event.preventDefault();
+            alert("Submission completed! We'll get back to you in 24hours")
+            document.getElementById
+            ("Form").reset();
+        }
+
+const navToggle = document.querySelector('.nav-toggle');
+ const navLinks = document.querySelector('.nav-links');
+const closeSidebar = document.querySelector('.close-sidebar')
+        
+        navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        });
+            
+        document.addEventListener('click', (e) => {
+          if(!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('show')
+          } 
+        })
+        
+        closeSidebar.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
+             
+    </script>
+
+</body>
+</html>
