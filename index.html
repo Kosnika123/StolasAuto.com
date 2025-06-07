@@ -292,6 +292,24 @@ For decades, The british car industry has provided us with prime examples of lux
 </div>
 
 <script>
+
+    const navbuttons = document.getElementById('nav-btn');
+const navlinks = document.getElementById('nav-links');
+const closeSidebar = document.querySelector('.close-sidebar');
+
+navbuttons.addEventListener('click',() => {
+    navlinks.classList.toggle('show');
+});
+
+// Alert Feedback
+
+// function myFunction(event){
+//     alert("Feedback Recieved!");
+// }
+
+closeSidebar.addEventListener('click', () => {
+    navlinks.classList.remove('show');
+})
    
 const heartBtn = document.getElementById('heart-btn');
 const heartIcon = document.getElementById('heart-icon');
